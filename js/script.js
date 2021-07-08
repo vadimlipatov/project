@@ -6,17 +6,33 @@ const personalMovieDB = {
     count : numberOfFilms,
     movies : {},
     actors : {},
-    genres : {},
+    genres : [],
     privat : false,
 };
+//1
+for (let i = 0; i < 2; i++) {
+    
+    //2
+    const q = prompt("один из просоирелнных последниз фильмов?", ""); 
+    const a = prompt("на сколько оцените его?", "");
+    if ( q != "" && q.length < 50 && q != null && a != "" && a != null ) {
+        personalMovieDB.movies[q] = a;
+        console.log('ok');
+    } else {
+        console.log('err');
+        i--;
+    }    
+}
 
-let q1 = prompt("один из просоирелнных последниз фильмов?", "");
-let a1 = prompt("на сколько оцените его?", "");
-movies[q1] = a1;
-let q2 = prompt("один из просоирелнных последниз фильмов?", "");
-let a2 = prompt("на сколько оцените его?", "");
-movies[q2] = a2;
-personalMovieDB.movies = movies;
+//3
+if (personalMovieDB.count < 10) {
+    alert('Too small');
+} else if ( (personalMovieDB.count >= 10) && (personalMovieDB.count < 30) ) {
+    alert('Cool');      
+}  else if ((personalMovieDB.count > 30)) {
+    alert('Kinoman');   
+} else {
+    alert('Error');
+}
 
-// console.log(movies);
 console.log(personalMovieDB);
